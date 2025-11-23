@@ -1,26 +1,312 @@
 @import "tailwindcss";
 
+/* ============================================
+   STITCH - TRON LEGACY THEME
+   The Grid: Neon, Geometric, Holographic
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* TRON Palette */
+  --tron-cyan: #00D2FF;       /* Flynn / Tron Blue */
+  --tron-cyan-glow: #C2F0FF;  /* Bright Core */
+  --tron-orange: #FF9C00;     /* Clu Orange */
+  --tron-orange-glow: #FFD580;
+  --tron-black: #050505;      /* Deep Void */
+  --tron-grid: #0A151A;       /* Grid Background */
+  --tron-glass: rgba(0, 210, 255, 0.05);
+  
+  /* Mapping to existing variables for compatibility */
+  --primary-1-electric-violet: var(--tron-cyan);
+  --primary-2-deep-space-black: var(--tron-black);
+  --primary-3-charcoal-slate: #0F1115;
+
+  /* Secondary Colors */
+  --secondary-neo-cyan: var(--tron-cyan);
+  --secondary-soft-magenta: var(--tron-orange); /* Replaced pink with orange for contrast */
+  --secondary-signal-yellow: #FFE564;
+
+  /* Background Colors */
+  --bg-dark-hero: var(--tron-black);
+  --bg-dark-surface: #080808;
+  --bg-light-surface-alt: #0F1115;
+
+  /* Text System */
+  --text-primary: #E0F7FF;
+  --text-secondary: #80A0B0;
+  --text-muted: #4A5A63;
+  --text-placeholder: #2A3A43;
+
+  /* Accent / Functional Colors */
+  --success: #00D2FF;
+  --warning: var(--tron-orange);
+  --error: #FF2A2A;
+  --info: #00D2FF;
+
+  /* Border & Stroke Colors */
+  --border-strong: rgba(0, 210, 255, 0.3);
+  --border-light: rgba(0, 210, 255, 0.1);
+  --border-input: #3C3C4A;
+
+  /* Default background and foreground */
+  --background: var(--bg-dark-hero);
+  --foreground: var(--text-primary);
+
+  /* Typography System - Söhne / Inter */
+  /* Primary font family - Inter (fallback) or Söhne (when available) */
+  --font-sans: var(--font-inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  --font-display: var(--font-orbitron, sans-serif); /* TRON Display Font */
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  
+  /* Typography Weights */
+  --font-weight-regular: 400;    /* Söhne Buch / Inter Regular */
+  --font-weight-medium: 500;     /* Söhne Halbfett / Inter Medium */
+  --font-weight-semibold: 600;   /* Söhne Kräftig / Inter SemiBold */
+  --font-weight-bold: 700;       /* Söhne Breit / Inter Bold */
+  --font-weight-extrabold: 800;  /* Söhne Extrabold / Inter ExtraBold */
+  
+  /* Typography Sizes (rem) */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Primary Colors */
+  --color-primary: var(--tron-cyan);
+  --color-primary-1: var(--tron-cyan);
+  --color-primary-2: var(--tron-black);
+  --color-primary-3: var(--primary-3-charcoal-slate);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Secondary Colors */
+  --color-secondary: var(--tron-cyan);
+  --color-secondary-cyan: var(--tron-cyan);
+  --color-secondary-magenta: var(--tron-orange);
+  --color-secondary-yellow: var(--secondary-signal-yellow);
+
+  /* Background Colors */
+  --color-bg-hero: var(--bg-dark-hero);
+  --color-bg-surface: var(--bg-dark-surface);
+  --color-bg-surface-alt: var(--bg-light-surface-alt);
+  --color-background: var(--background);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-placeholder: var(--text-placeholder);
+  --color-foreground: var(--foreground);
+
+  /* Border Colors */
+  --color-border-strong: var(--border-strong);
+  --color-border-light: var(--border-light);
+  --color-border-input: var(--border-input);
+  
+  /* TRON Specifics */
+  --color-tron-cyan: var(--tron-cyan);
+  --color-tron-orange: var(--tron-orange);
+  --color-tron-grid: var(--tron-grid);
+
+  /* Font Family */
+  --font-family-display: var(--font-sans);
+  --font-family-body: var(--font-sans);
+  --font-family-mono: var(--font-mono);
+  
+  /* Font Weights */
+  --font-weight-display: 700;
+  --font-weight-display-xl: 800;
+  --font-weight-subheading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-medium: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  
+  /* Letter Spacing */
+  --letter-spacing-display: -0.01em;
+  --letter-spacing-subheading: -0.005em;
+  --letter-spacing-button: -0.005em;
+  
+  /* Line Heights */
+  --line-height-display: 1.1;
+  --line-height-subheading: 1.4;
+  --line-height-body: 1.6;
+  --line-height-body-lg: 1.65;
+  --line-height-button: 1.2;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-image: 
+    linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient Utility Classes - Updated for TRON */
+.gradient-brand {
+  background: linear-gradient(90deg, #00D2FF 0%, #C2F0FF 100%);
+  text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+.gradient-creator {
+  background: linear-gradient(90deg, #00D2FF, #FF9C00);
+}
+
+.gradient-luxury {
+  background: linear-gradient(180deg, #050505 0%, #0F1115 100%);
+}
+
+/* TRON Card Style */
+.tron-card {
+  background: rgba(5, 5, 5, 0.8);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.05), inset 0 0 20px rgba(0, 210, 255, 0.02);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.tron-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00D2FF, transparent);
+  opacity: 0.5;
+}
+
+.tron-card:hover {
+  border-color: rgba(0, 210, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.15), inset 0 0 30px rgba(0, 210, 255, 0.05);
+}
+
+/* TRON Text Glow */
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+}
+
+/* Updated Typography Scale for Massive Impact */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem); /* Responsive, massive */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.text-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+
+.text-display-md {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* New Lead / Statement Class */
+.text-lead-statement {
+  font-family: var(--font-display); /* Using display font for impact */
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 20px rgba(0, 210, 255, 0.3); /* Subtle cyan glow */
+  letter-spacing: 0.02em;
+}
+
+.text-lead-statement strong {
+  color: var(--tron-cyan);
+  font-weight: 600;
+}
+
+.text-subheading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.text-body-lg {
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+.text-body-md {
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.text-body-sm {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.text-body-medium {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.text-button {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+.text-button-lg {
+  font-weight: 700;
+}
+
+.text-caption {
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.025em;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
 }

@@ -12,16 +12,25 @@ export default function AnimatedHeading({
   
   if (variant === "reveal") {
     return (
-      <div className="overflow-hidden">
+      <div className="overflow-hidden relative group">
         <motion.h2
-          initial={{ y: "100%" }}
-          whileInView={{ y: 0 }}
+          initial={{ y: "100%", opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className={`${className} ${gradient ? "gradient-brand bg-clip-text text-transparent" : ""}`}
+          className={`${className} ${gradient ? "gradient-brand bg-clip-text text-transparent" : "text-white text-glow"}`}
+          style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}
         >
           {text}
         </motion.h2>
+        {/* Holographic scanline */}
+        <motion.div 
+            className="absolute top-0 left-0 w-full h-[2px] bg-tron-cyan opacity-50"
+            initial={{ top: "100%" }}
+            whileInView={{ top: "-10%" }}
+            transition={{ duration: 1, ease: "linear" }}
+            viewport={{ once: true }}
+        />
       </div>
     );
   }
@@ -30,34 +39,26 @@ export default function AnimatedHeading({
     return (
       <div className="relative inline-block">
         <motion.h2
-          className={`${className} relative z-10 ${gradient ? "gradient-creator bg-clip-text text-transparent" : ""}`}
+          className={`${className} relative z-10 text-white text-glow`}
+          style={{ textTransform: 'uppercase' }}
           whileInView={{ 
             x: [0, -2, 2, -1, 0],
-            skew: [0, 5, -5, 0] 
+            textShadow: [
+                "0 0 5px #00D2FF", 
+                "-2px 0 5px #FF9C00", 
+                "2px 0 5px #00D2FF", 
+                "0 0 5px #00D2FF"
+            ]
           }}
           transition={{ 
-            duration: 0.4, 
+            duration: 0.3, 
             repeat: Infinity, 
-            repeatDelay: 3,
-            repeatType: "reverse" 
+            repeatDelay: 4,
+            repeatType: "mirror" 
           }}
         >
           {text}
         </motion.h2>
-        <motion.span
-          className={`absolute top-0 left-0 -z-10 opacity-50 text-secondary-cyan select-none ${className}`}
-          animate={{ x: [-2, 2, -1, 0], opacity: [0, 0.5, 0] }}
-          transition={{ duration: 0.2, repeat: Infinity, repeatDelay: 3.1 }}
-        >
-          {text}
-        </motion.span>
-        <motion.span
-          className={`absolute top-0 left-0 -z-10 opacity-50 text-secondary-magenta select-none ${className}`}
-          animate={{ x: [2, -2, 1, 0], opacity: [0, 0.5, 0] }}
-          transition={{ duration: 0.2, repeat: Infinity, repeatDelay: 3.05 }}
-        >
-          {text}
-        </motion.span>
       </div>
     );
   }
