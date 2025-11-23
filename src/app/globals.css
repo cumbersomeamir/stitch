@@ -215,7 +215,7 @@ body {
 /* Updated Typography Scale for Massive Impact */
 .text-display-xl {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 8rem); /* Responsive, massive */
+  font-size: clamp(3rem, 8vw, 6rem); /* Reduced from 4rem/10vw/8rem */
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 0.9;
@@ -224,7 +224,7 @@ body {
 
 .text-display-lg {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Reduced from 3rem/6vw/5rem */
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.0;
@@ -233,7 +233,7 @@ body {
 
 .text-display-md {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.75rem, 3vw, 3rem); /* Reduced from 2rem/4vw/3.5rem */
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.1;
