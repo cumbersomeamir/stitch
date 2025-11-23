@@ -36,8 +36,8 @@ export default function BrandDealSection() {
 
             <div className="relative">
                 <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-2xl border border-gray-200 relative">
-                    <Image 
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
+                    <Image
+                        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80"
                         alt="Brand Deal Meeting"
                         fill
                         className="object-cover grayscale opacity-20"

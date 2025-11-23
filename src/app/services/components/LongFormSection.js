@@ -29,14 +29,14 @@ export default function LongFormSection() {
           
           {/* Visual Placeholder - Timeline */}
           <div className="relative h-[400px] border border-white/10 bg-black/50 overflow-hidden rounded-lg group">
-             <div className="absolute inset-0 bg-gradient-to-br from-tron-cyan/10 to-purple-500/10 mix-blend-overlay z-10" />
-             <Image 
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?auto=format&fit=crop&w=1200&q=80"
-                alt="Editing Timeline"
-                fill
-                className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
-             />
-             {/* Overlay UI elements */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-tron-cyan/10 to-purple-500/10 mix-blend-overlay z-10" />
+                    <Image
+                       src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80"
+                       alt="Editing Timeline"
+                       fill
+                       className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
+                    />
+                    {/* Overlay UI elements */}
              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-bg-surface via-bg-surface/80 to-transparent p-6 z-20">
                 <div className="flex gap-2 mb-2">
                     <div className="h-2 w-12 bg-red-500 rounded-full animate-pulse"></div>

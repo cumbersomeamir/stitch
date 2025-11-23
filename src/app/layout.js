@@ -1,6 +1,7 @@
 import { Inter, Orbitron } from "next/font/google";
 import localFont from "next/font/local";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
+import Header from "@/components/layout/Header";
 import "./globals.css";
 
 // Inter - Body text
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} ${orbitron.variable} font-sans antialiased bg-bg-dark-hero text-text-primary`}
       >
         <NoiseOverlay />
+        <Header />
         {children}
       </body>
     </html>

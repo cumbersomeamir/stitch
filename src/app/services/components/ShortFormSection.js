@@ -15,8 +15,8 @@ export default function ShortFormSection() {
             <div className="relative h-[600px] flex items-center justify-center">
                 {/* Phone Frame Mockup */}
                 <div className="relative w-[300px] h-[580px] border-8 border-gray-900 rounded-[3rem] bg-black overflow-hidden shadow-[0_0_50px_rgba(255,156,0,0.3)] z-20 transform -rotate-3">
-                    <Image 
-                        src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80"
+                    <Image
+                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
                         alt="Short Form Content"
                         fill
                         className="object-cover opacity-80"
