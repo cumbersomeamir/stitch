@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+/* ============================================
+   STITCH BRAND COLOR SYSTEM
+   Premium, modern, creator-industry-focused
+   ============================================ */
+
+:root {
+  /* Primary Colors (Brand Core) */
+  --primary-1-electric-violet: #6B4EFF;
+  --primary-2-deep-space-black: #0C0C14;
+  --primary-3-charcoal-slate: #1A1A24;
+
+  /* Secondary Colors */
+  --secondary-neo-cyan: #27E6F5;
+  --secondary-soft-magenta: #FF66C4;
+  --secondary-signal-yellow: #FFE564;
+
+  /* Background Colors */
+  --bg-dark-hero: #0C0C14;
+  --bg-dark-surface: #12121C;
+  --bg-light-surface-alt: #1A1A24;
+
+  /* Text System */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B5B5C3;
+  --text-muted: #7A7A88;
+  --text-placeholder: #50505C;
+
+  /* Accent / Functional Colors */
+  --success: #2ECC71;
+  --success-soft: #1F9D58;
+  --warning: #FFC857;
+  --warning-soft: #E4A531;
+  --error: #FF4D4F;
+  --error-deep: #D9363E;
+  --info: #3BA3FF;
+  --info-soft: #1A7EDB;
+
+  /* Border & Stroke Colors */
+  --border-strong: #2A2A35;
+  --border-light: #1E1E28;
+  --border-input: #3C3C4A;
+
+  /* Shadows */
+  --shadow-card: rgba(0, 0, 0, 0.25);
+  --shadow-dialog: rgba(0, 0, 0, 0.4);
+  --shadow-floating: rgba(0, 0, 0, 0.55);
+
+  /* Default background and foreground */
+  --background: var(--bg-dark-hero);
+  --foreground: var(--text-primary);
+}
+
+@theme inline {
+  /* Primary Colors */
+  --color-primary: var(--primary-1-electric-violet);
+  --color-primary-1: var(--primary-1-electric-violet);
+  --color-primary-2: var(--primary-2-deep-space-black);
+  --color-primary-3: var(--primary-3-charcoal-slate);
+
+  /* Secondary Colors */
+  --color-secondary: var(--secondary-neo-cyan);
+  --color-secondary-cyan: var(--secondary-neo-cyan);
+  --color-secondary-magenta: var(--secondary-soft-magenta);
+  --color-secondary-yellow: var(--secondary-signal-yellow);
+
+  /* Background Colors */
+  --color-bg-hero: var(--bg-dark-hero);
+  --color-bg-surface: var(--bg-dark-surface);
+  --color-bg-surface-alt: var(--bg-light-surface-alt);
+  --color-background: var(--background);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-placeholder: var(--text-placeholder);
+  --color-foreground: var(--foreground);
+
+  /* Accent / Functional Colors */
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-deep: var(--error-deep);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  /* Border Colors */
+  --color-border-strong: var(--border-strong);
+  --color-border-light: var(--border-light);
+  --color-border-input: var(--border-input);
+
+  /* Typography System - Söhne / Inter */
+  /* Primary font family - Inter (fallback) or Söhne (when available) */
+  --font-sans: var(--font-inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  
+  /* Typography Weights */
+  --font-weight-regular: 400;    /* Söhne Buch / Inter Regular */
+  --font-weight-medium: 500;     /* Söhne Halbfett / Inter Medium */
+  --font-weight-semibold: 600;   /* Söhne Kräftig / Inter SemiBold */
+  --font-weight-bold: 700;       /* Söhne Breit / Inter Bold */
+  --font-weight-extrabold: 800;  /* Söhne Extrabold / Inter ExtraBold */
+  
+  /* Typography Sizes (rem) */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient Utility Classes */
+.gradient-brand {
+  background: linear-gradient(90deg, #6B4EFF 0%, #27E6F5 100%);
+}
+
+.gradient-creator {
+  background: linear-gradient(90deg, #6B4EFF, #FF66C4);
+}
+
+.gradient-luxury {
+  background: linear-gradient(180deg, #0C0C14 0%, #1A1A24 100%);
+}
+
+/* ============================================
+   STITCH TYPOGRAPHY SYSTEM
+   Premium typography hierarchy for creator brands
+   ============================================ */
+
+/* Display / Headlines (Hero text, main headlines, section headers) */
+.text-display,
+.font-display {
+  font-family: var(--font-sans);
+  font-weight: 700; /* Söhne Breit / Inter Bold */
+  letter-spacing: -0.01em; /* -1% */
+  line-height: 1.1;
+}
+
+.text-display-xl {
+  font-size: var(--text-5xl);
+  font-weight: 800; /* Söhne Extrabold / Inter ExtraBold */
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.text-display-lg {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.text-display-md {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Subheadings (Subtitles, cards, mini section titles) */
+.text-subheading,
+.font-subheading {
+  font-family: var(--font-sans);
+  font-weight: 600; /* Söhne SemiBold / Inter SemiBold */
+  letter-spacing: -0.005em; /* -0.5% */
+  line-height: 1.4;
+}
+
+/* Body Text (Paragraphs, descriptions, FAQs, service details) */
+.text-body,
+.font-body {
+  font-family: var(--font-sans);
+  font-weight: 400; /* Söhne Buch / Inter Regular */
+  line-height: 1.6; /* 150-165% */
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-body-lg {
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+.text-body-md {
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.text-body-sm {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+/* Body Medium (Highlights - Keywords, pricing features, stats) */
+.text-body-medium,
+.font-body-medium {
+  font-family: var(--font-sans);
+  font-weight: 500; /* Söhne Halbfett / Inter Medium */
+  line-height: 1.5;
+}
+
+/* Button & CTA Text */
+.text-button,
+.font-button {
+  font-family: var(--font-sans);
+  font-weight: 600; /* Söhne Halbfett / Inter SemiBold */
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+.text-button-lg {
+  font-weight: 700; /* Söhne Bold / Inter Bold */
+}
+
+/* UI Labels / Captions / Metadata */
+.text-caption,
+.font-caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.text-caption-medium {
+  font-weight: 500;
+}
+
+/* Mono / Code (Timestamps, filenames, UI elements) */
+.text-mono,
+.font-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  letter-spacing: 0.025em;
+}
+
+/* Tabular Numbers (Pricing, stats, metrics, dates) */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Typography Utility Classes for Tailwind */
+@theme inline {
+  /* Font Family */
+  --font-family-display: var(--font-sans);
+  --font-family-body: var(--font-sans);
+  --font-family-mono: var(--font-mono);
+  
+  /* Font Weights */
+  --font-weight-display: 700;
+  --font-weight-display-xl: 800;
+  --font-weight-subheading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-medium: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  
+  /* Letter Spacing */
+  --letter-spacing-display: -0.01em;
+  --letter-spacing-subheading: -0.005em;
+  --letter-spacing-button: -0.005em;
+  
+  /* Line Heights */
+  --line-height-display: 1.1;
+  --line-height-subheading: 1.4;
+  --line-height-body: 1.6;
+  --line-height-body-lg: 1.65;
+  --line-height-button: 1.2;
+}
