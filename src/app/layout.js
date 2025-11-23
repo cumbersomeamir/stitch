@@ -23,6 +23,9 @@ const orbitron = Orbitron({
 export const metadata = {
   title: "Stitch - Premium Video Editing Agency",
   description: "Your Always-On Editing Team — In Your Style.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
